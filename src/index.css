@@ -6,33 +6,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 221 39% 11%;
+    --background: 240 10% 8%;
+    --foreground: 180 100% 90%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 221 39% 11%;
+    --card: 240 8% 12%;
+    --card-foreground: 180 100% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 221 39% 11%;
+    --popover: 240 8% 12%;
+    --popover-foreground: 180 100% 90%;
 
-    --primary: 263 70% 50%;
+    --primary: 315 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 221 39% 11%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 240 8% 15%;
+    --secondary-foreground: 180 100% 90%;
 
-    --muted: 220 13% 91%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 240 8% 18%;
+    --muted-foreground: 180 30% 60%;
 
-    --accent: 263 70% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 240 10% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 263 70% 50%;
+    --border: 240 20% 25%;
+    --input: 240 8% 18%;
+    --ring: 315 100% 50%;
 
     --radius: 0.5rem;
 
@@ -109,5 +109,35 @@
   h5,
   h6 {
     font-family: "Montserrat", sans-serif;
+  }
+}
+
+@layer utilities {
+  .neon-text {
+    text-shadow:
+      0 0 10px rgba(255, 0, 255, 0.8),
+      0 0 20px rgba(255, 0, 255, 0.6),
+      0 0 30px rgba(255, 0, 255, 0.4);
+  }
+
+  .neon-cyan {
+    text-shadow:
+      0 0 10px rgba(0, 255, 255, 0.8),
+      0 0 20px rgba(0, 255, 255, 0.6),
+      0 0 30px rgba(0, 255, 255, 0.4);
+  }
+
+  .neon-border {
+    box-shadow:
+      0 0 10px rgba(255, 0, 255, 0.5),
+      0 0 20px rgba(255, 0, 255, 0.3),
+      inset 0 0 10px rgba(255, 0, 255, 0.2);
+  }
+
+  .neon-border-cyan {
+    box-shadow:
+      0 0 10px rgba(0, 255, 255, 0.5),
+      0 0 20px rgba(0, 255, 255, 0.3),
+      inset 0 0 10px rgba(0, 255, 255, 0.2);
   }
 }

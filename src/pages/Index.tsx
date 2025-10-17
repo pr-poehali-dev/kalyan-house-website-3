@@ -126,12 +126,12 @@ const Index = () => {
         href="https://t.me/PoisonRose321" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 animate-pulse"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full flex items-center justify-center transition-all hover:scale-110 animate-pulse neon-border"
       >
         <Icon name="Send" size={24} />
       </a>
 
-      <header className="sticky top-0 z-50 bg-secondary/95 backdrop-blur-sm border-b border-border">
+      <header className="sticky top-0 z-50 bg-secondary/95 backdrop-blur-sm border-b-2 border-primary/50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -169,10 +169,11 @@ const Index = () => {
         </div>
       </header>
 
-      <section id="home" className="relative py-20 md:py-32 bg-gradient-to-br from-secondary to-secondary/80">
-        <div className="container mx-auto px-4">
+      <section id="home" className="relative py-20 md:py-32 bg-gradient-to-br from-secondary via-background to-secondary overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80008020_1px,transparent_1px),linear-gradient(to_bottom,#80008020_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 neon-text">
               Премиум кальяны и аксессуары
             </h2>
             <p className="text-lg md:text-xl text-primary-foreground/80 mb-8">
@@ -204,7 +205,7 @@ const Index = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {categories.map((category) => (
-              <Card key={category.id} className="group cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1">
+              <Card key={category.id} className="group cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 border-primary/30 hover:neon-border">
                 <CardContent className="p-6 flex flex-col items-center text-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <Icon name={category.icon as any} className="text-primary" size={32} />
@@ -219,7 +220,7 @@ const Index = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product) => (
-              <Card key={product.id} className="group cursor-pointer transition-all hover:shadow-xl overflow-hidden">
+              <Card key={product.id} className="group cursor-pointer transition-all hover:shadow-xl overflow-hidden border-primary/30 hover:neon-border">
                 <div className="relative aspect-square overflow-hidden bg-muted">
                   <img 
                     src={product.image} 
@@ -254,7 +255,7 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {promotions.map((promo) => (
-              <Card key={promo.id} className="relative overflow-hidden group cursor-pointer hover:shadow-lg transition-all">
+              <Card key={promo.id} className="relative overflow-hidden group cursor-pointer hover:shadow-lg transition-all border-accent/30 hover:neon-border-cyan">
                 <CardContent className="p-6">
                   <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg">
                     {promo.discount}
