@@ -7,6 +7,7 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
   const categories = [
     { 
@@ -59,6 +60,35 @@ const Index = () => {
     },
   ];
 
+  const tobaccoProducts = [
+    { id: 1, name: 'Overdose', weight: '25г', category: 'Табак', price: '350 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 2, name: 'Blackburn', weight: '25г', category: 'Табак', price: '300 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 3, name: 'НАШ', weight: '40г', category: 'Табак', price: '500 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 4, name: 'Darkside Shot', weight: '30г', category: 'Табак', price: '380 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 5, name: 'Darkside Core', weight: '30г', category: 'Табак', price: '400 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 6, name: 'Brusko', weight: '50г', category: 'Табак', price: '250 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg', badge: '🎁' },
+    { id: 7, name: 'Must Have', weight: '25г', category: 'Табак', price: '275 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 8, name: 'Эндорфин', weight: '60г', category: 'Табак', price: '500 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 9, name: 'HIT', weight: '30г', category: 'Табак', price: '350 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 10, name: 'Must Have', weight: '125г', category: 'Табак', price: '1 200 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 11, name: 'Trofimoffs', weight: '25г', category: 'Табак', price: '380 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 12, name: 'Darkside Sabotage', weight: '30г', category: 'Табак', price: '400 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 13, name: 'Darkside Xperience', weight: '30г', category: 'Табак', price: '400 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 14, name: 'Fake', weight: '40г', category: 'Табак', price: '490 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 15, name: 'Darkside', weight: '250г', category: 'Табак', price: '2 300 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 16, name: 'Jent Alcohol', weight: '25г', category: 'Табак', price: '330 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 17, name: 'Jent Cigar', weight: '20г', category: 'Табак', price: '590 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 18, name: 'Ready', weight: '25г', category: 'Табак', price: '280 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 19, name: 'Sebero Black', weight: '25г', category: 'Табак', price: '400 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 20, name: 'Sebero Classic', weight: '25г', category: 'Табак', price: '380 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 21, name: 'Starline', weight: '250г', category: 'Табак', price: '2 000 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 22, name: 'Хулиган', weight: '25г', category: 'Табак', price: '380 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 23, name: 'Хулиган Поп', weight: '25г', category: 'Табак', price: '380 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 24, name: 'Хулиган Хард', weight: '25г', category: 'Табак', price: '380 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 25, name: 'Trofimoffs', weight: '125г', category: 'Табак', price: '1 400 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+    { id: 26, name: 'Trofimoffs Teror', weight: '125г', category: 'Табак', price: '1 600 ₽', image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg' },
+  ];
+
   const products = [
     {
       id: 1,
@@ -67,14 +97,6 @@ const Index = () => {
       price: '12 990 ₽',
       image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/9b45058e-5b4c-4509-98c9-4c63ec34109a.jpg',
       badge: 'Хит'
-    },
-    {
-      id: 2,
-      name: 'Tobacco Mix Collection',
-      category: 'Табак',
-      price: '890 ₽',
-      image: 'https://cdn.poehali.dev/projects/4904a45a-6f4e-4e93-bb12-00cdbd0dc826/files/79d9cd19-c3d5-46f2-b6fe-8c9b615d869d.jpg',
-      badge: 'Новинка'
     },
     {
       id: 3,
@@ -92,6 +114,8 @@ const Index = () => {
       image: '/placeholder.svg',
     },
   ];
+
+  const displayProducts = selectedCategory === 'all' ? products : selectedCategory === 'tobacco' ? tobaccoProducts : products.filter(p => p.category !== 'Табак');
 
   const promotions = [
     {
@@ -205,7 +229,13 @@ const Index = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {categories.map((category) => (
-              <Card key={category.id} className="group cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 border-primary/30 hover:neon-border">
+              <Card 
+                key={category.id} 
+                onClick={() => setSelectedCategory(category.id === 'tobacco' ? 'tobacco' : 'all')}
+                className={`group cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 border-primary/30 hover:neon-border ${
+                  (category.id === 'tobacco' && selectedCategory === 'tobacco') ? 'neon-border' : ''
+                }`}
+              >
                 <CardContent className="p-6 flex flex-col items-center text-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <Icon name={category.icon as any} className="text-primary" size={32} />
@@ -216,10 +246,19 @@ const Index = () => {
             ))}
           </div>
 
-          <h3 className="text-3xl font-bold text-center mb-12">Популярные товары</h3>
+          <div className="flex items-center justify-between mb-8">
+            <h3 className="text-3xl font-bold">
+              {selectedCategory === 'tobacco' ? 'Ассортимент табака' : 'Популярные товары'}
+            </h3>
+            {selectedCategory === 'tobacco' && (
+              <Button variant="outline" onClick={() => setSelectedCategory('all')}>
+                Показать всё
+              </Button>
+            )}
+          </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.map((product) => (
+            {displayProducts.map((product) => (
               <Card key={product.id} className="group cursor-pointer transition-all hover:shadow-xl overflow-hidden border-primary/30 hover:neon-border">
                 <div className="relative aspect-square overflow-hidden bg-muted">
                   <img 
@@ -235,7 +274,9 @@ const Index = () => {
                 </div>
                 <CardContent className="p-4">
                   <p className="text-sm text-muted-foreground mb-1">{product.category}</p>
-                  <h4 className="font-semibold mb-2">{product.name}</h4>
+                  <h4 className="font-semibold mb-2">
+                    {product.name} {'weight' in product ? product.weight : ''}
+                  </h4>
                   <div className="flex items-center justify-between">
                     <span className="text-xl font-bold text-primary">{product.price}</span>
                     <Button size="sm" variant="ghost" className="hover:bg-primary/10">
