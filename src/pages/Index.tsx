@@ -322,28 +322,28 @@ const Index = () => {
                   <Icon name="MapPin" className="text-primary mt-1" size={20} />
                   <div>
                     <p className="font-medium">Адрес</p>
-                    <p className="text-muted-foreground">г. Москва, ул. Примерная, д. 1</p>
+                    <p className="text-muted-foreground">г. Волгоград, ул. Советская, д. 20</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Icon name="Phone" className="text-primary mt-1" size={20} />
                   <div>
                     <p className="font-medium">Телефон</p>
-                    <p className="text-muted-foreground">+7 (999) 123-45-67</p>
+                    <p className="text-muted-foreground">+7 (902) 310-46-88</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Icon name="Mail" className="text-primary mt-1" size={20} />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">info@kalyanhouse.ru</p>
+                    <p className="text-muted-foreground">rinatsimashev@yandex.ru</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Icon name="Clock" className="text-primary mt-1" size={20} />
                   <div>
                     <p className="font-medium">Режим работы</p>
-                    <p className="text-muted-foreground">Ежедневно с 10:00 до 22:00</p>
+                    <p className="text-muted-foreground">Ежедневно с 11:00 до 23:00</p>
                   </div>
                 </div>
               </div>
