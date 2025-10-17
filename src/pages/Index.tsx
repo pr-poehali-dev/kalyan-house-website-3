@@ -173,9 +173,17 @@ const Index = () => {
               <Button size="lg" className="text-lg px-8" onClick={() => scrollToSection('catalog')}>
                 Перейти в каталог
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 bg-background/10 border-primary-foreground/20 text-primary-foreground hover:bg-background/20">
+              <Button size="lg" variant="outline" className="text-lg px-8 bg-background/10 border-primary-foreground/20 text-primary-foreground hover:bg-background/20" onClick={() => scrollToSection('promotions')}>
                 Акции
               </Button>
+            </div>
+            <div className="mt-8 flex justify-center">
+              <a href="https://t.me/PoisonRose321" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="gap-2 text-lg px-8">
+                  <Icon name="Send" size={20} />
+                  Написать в Telegram
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -406,14 +414,11 @@ const Index = () => {
             <div>
               <h5 className="font-semibold mb-4">Мы в соцсетях</h5>
               <div className="flex gap-3">
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Icon name="MessageCircle" size={20} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Icon name="Instagram" size={20} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                <a href="https://t.me/PoisonRose321" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
                   <Icon name="Send" size={20} />
+                </a>
+                <a href="https://vk.com/kalyanhouse_vlg" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                  <Icon name="MessageCircle" size={20} />
                 </a>
               </div>
             </div>
