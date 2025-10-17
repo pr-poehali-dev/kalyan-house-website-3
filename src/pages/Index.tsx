@@ -8,6 +8,8 @@ import Icon from '@/components/ui/icon';
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState('name');
 
   const categories = [
     { 
@@ -115,7 +117,25 @@ const Index = () => {
     },
   ];
 
-  const displayProducts = selectedCategory === 'all' ? products : selectedCategory === 'tobacco' ? tobaccoProducts : products.filter(p => p.category !== 'Табак');
+  let displayProducts = selectedCategory === 'all' ? products : selectedCategory === 'tobacco' ? tobaccoProducts : products.filter(p => p.category !== 'Табак');
+  
+  if (searchQuery) {
+    displayProducts = displayProducts.filter(p => 
+      p.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }
+  
+  if (sortBy === 'price-asc') {
+    displayProducts = [...displayProducts].sort((a, b) => 
+      parseInt(a.price.replace(/[^\d]/g, '')) - parseInt(b.price.replace(/[^\d]/g, ''))
+    );
+  } else if (sortBy === 'price-desc') {
+    displayProducts = [...displayProducts].sort((a, b) => 
+      parseInt(b.price.replace(/[^\d]/g, '')) - parseInt(a.price.replace(/[^\d]/g, ''))
+    );
+  } else {
+    displayProducts = [...displayProducts].sort((a, b) => a.name.localeCompare(b.name));
+  }
 
   const promotions = [
     {
@@ -246,14 +266,40 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-3xl font-bold">
-              {selectedCategory === 'tobacco' ? 'Ассортимент табака' : 'Популярные товары'}
-            </h3>
+          <div className="mb-8">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-3xl font-bold">
+                {selectedCategory === 'tobacco' ? 'Ассортимент табака' : 'Популярные товары'}
+              </h3>
+              {selectedCategory === 'tobacco' && (
+                <Button variant="outline" onClick={() => setSelectedCategory('all')}>
+                  Показать всё
+                </Button>
+              )}
+            </div>
+            
             {selectedCategory === 'tobacco' && (
-              <Button variant="outline" onClick={() => setSelectedCategory('all')}>
-                Показать всё
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex-1">
+                  <Input 
+                    placeholder="Поиск табака..." 
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full"
+                  />
+                </div>
+                <div className="sm:w-48">
+                  <select 
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                    className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm"
+                  >
+                    <option value="name">По названию</option>
+                    <option value="price-asc">Цена: по возрастанию</option>
+                    <option value="price-desc">Цена: по убыванию</option>
+                  </select>
+                </div>
+              </div>
             )}
           </div>
           
