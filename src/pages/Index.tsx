@@ -122,6 +122,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <a 
+        href="https://t.me/PoisonRose321" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 animate-pulse"
+      >
+        <Icon name="Send" size={24} />
+      </a>
+
       <header className="sticky top-0 z-50 bg-secondary/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
